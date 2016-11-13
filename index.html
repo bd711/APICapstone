@@ -2,31 +2,37 @@
 <html>
 
 <head>
-	<title>Let's Walk to Lunch</title>
-	<!-- Connect CSS here -->
+    <title>Let's Walk to Lunch</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 
 <body>
-	<div class="intro"> 
-		<h1>Let's Walk to Lunch</h1>
-		<h2>Get customized lunch options based off the current weather conditions.</h2>
-	</div>
-	
-	<div class="location"> 
-  		<form action="#" class="js-query">
- 			 <label for="street">Street Address</label>
-  				<input type="text" name="street" id="street" placeholder="123 Main St." class="js_street"></br>
- 			<label for="city">City Name</label>
-  				<input type="text" name="location" id="city" placeholder="Boston" class="js_city"></br>
-   			<label for="state">State Code</label>
-  				<input type="text" name="location" id="state" placeholder="MA" class="js_state"></br>
-			<button type="submit">Search</button>
-		</form>
-	</div>
-	
-	<div class="results"> </div>
-
-	<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-  <script src="app.js"></script>
+    <div class="text">
+        <div class="intro">
+            <h1>Let's Walk to Lunch</h1>
+            <h2>Get customized lunch options based off the current weather conditions.</h2>
+        </div>
+        <div class="location">
+            <form action="#" class="js-query">
+                <label for="street">Street Address</label>
+                <input type="text" name="street" id="street" placeholder="123 Main St." class="js_street">
+                </br>
+                <label for="city">City Name</label>
+                <input type="text" name="location" id="city" placeholder="Boston" class="js_city">
+                </br>
+                <label for="state">State Code</label>
+                <input type="text" name="location" id="state" placeholder="MA" class="js_state">
+                </br>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+    <div class="results"> </div>
+    <div id="map"> </div>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="app.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsYux5XM8YvtDJaf11d51Z8nC4kgaQ1z4&callback=initMap" async defer></script>
 </body>
+
 </html>
