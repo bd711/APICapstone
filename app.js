@@ -14,7 +14,7 @@ $(document).ready(function() { // get location from user
 
 
         $.ajax({ // feed location into API, get back conditions 
-            url: 'http://api.wunderground.com/api/af91e5347e902bf9/conditions/settings/q/' + userInput + '.json',
+            url: 'https://api.wunderground.com/api/af91e5347e902bf9/conditions/settings/q/' + userInput + '.json',
             dataType: "json",
             method: "GET",
             success: function(data) {
