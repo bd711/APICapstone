@@ -37,17 +37,22 @@ $(document).ready(function() { // get location from user
                         console.log(yelpData);
 
 
+                        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                        var labelIndex = 0;
+                        var labels2 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                        var labelIndex2 = 0
 
                         $.each(yelpData.businesses, function(index, business) {
-                            $(".results").append("<li><ol>" + business.name + " &#9679; " + business.location.address
-
-                                + " <a href=" + business.url + ">&#9679; Learn More</a>" + "</ol></li>");
+                            $(".results").append("<li><ol>" + labels[labelIndex++ % labels.length] + ". " + business.name + " &#9679; " + business.location.address + " <a href=" + business.url + " target='_blank'>&#9679; Learn More</a>" + "</ol></li>");
 
                             var locations = { lat: business.location.coordinate.latitude, lng: business.location.coordinate.longitude }; // make this an array of the different locations returned
                             var marker = new google.maps.Marker({
                                 position: locations,
-                                map: map
+                                map: map,
+                                label: labels[labelIndex2++ % labels2.length],
                             });
+
+                            map.setCenter({ lat: business.location.coordinate.latitude, lng: business.location.coordinate.longitude });
 
 
                         });
@@ -88,10 +93,10 @@ function initMap() {
 
 
 
-/* Yelp info: Consumer Key	o5WlNJkfPxgXNgC9VUvrAQ
-Consumer Secret	quI2oBuTlsZdzX544UVhL4YaD6s
-Token	KU6chDhw8OWOxkA4hXKDSoJYAav7WWdG
-Token Secret	FHXrR-WdLCTXpiKs4vcwhTAduAg
+/* Yelp info: Consumer Key  o5WlNJkfPxgXNgC9VUvrAQ
+Consumer Secret quI2oBuTlsZdzX544UVhL4YaD6s
+Token   KU6chDhw8OWOxkA4hXKDSoJYAav7WWdG
+Token Secret    FHXrR-WdLCTXpiKs4vcwhTAduAg
 
 http://api.wunderground.com/api/af91e5347e902bf9/conditions/q/MA/Boston.json
 
